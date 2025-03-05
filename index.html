@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royalty Rugs - Luxury Persian Rugs</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="chatbot.js"></script>
+    <script>
+        function changeLanguage(lang) {
+            document.documentElement.lang = lang;
+            const translations = {
+                en: {
+                    home: "Home",
+                    shop: "Shop",
+                    customRug: "Custom Rugs",
+                    about: "About",
+                    contact: "Contact",
+                    heroTitle: "Luxury Persian Rugs for Every Home",
+                    heroDesc: "Timeless elegance & unmatched craftsmanship.",
+                    shopNow: "Shop Now",
+                    requestRug: "Request a Custom Rug",
+                    describeRug: "Describe Your Rug:",
+                    submitRequest: "Submit Request",
+                    customerReviews: "What Our Customers Say",
+                    chatWelcome: "Welcome! How can I assist you today?",
+                    scheduleShowing: "📅 Schedule a Showing",
+                    askQuestion: "❓ Ask a Question",
+                    customRugInquiry: "🎨 Custom Rug Inquiry"
+                },
+                fr: {
+                    home: "Accueil",
+                    shop: "Boutique",
+                    customRug: "Tapis Personnalisés",
+                    about: "À Propos",
+                    contact: "Contact",
+                    heroTitle: "Tapis persans de luxe pour chaque maison",
+                    heroDesc: "Élégance intemporelle et savoir-faire inégalé.",
+                    shopNow: "Acheter Maintenant",
+                    requestRug: "Demander un tapis personnalisé",
+                    describeRug: "Décrivez votre tapis:",
+                    submitRequest: "Envoyer la demande",
+                    customerReviews: "Avis de nos clients",
+                    chatWelcome: "Bienvenue! Comment puis-je vous aider aujourd'hui?",
+                    scheduleShowing: "📅 Planifier une visite",
+                    askQuestion: "❓ Poser une question",
+                    customRugInquiry: "🎨 Demande de tapis personnalisé"
+                },
+                es: {
+                    home: "Inicio",
+                    shop: "Tienda",
+                    customRug: "Alfombras Personalizadas",
+                    about: "Sobre Nosotros",
+                    contact: "Contacto",
+                    heroTitle: "Alfombras persas de lujo para cada hogar",
+                    heroDesc: "Elegancia atemporal y artesanía inigualable.",
+                    shopNow: "Comprar Ahora",
+                    requestRug: "Solicitar una alfombra personalizada",
+                    describeRug: "Describa su alfombra:",
+                    submitRequest: "Enviar Solicitud",
+                    customerReviews: "Lo que dicen nuestros clientes",
+                    chatWelcome: "¡Bienvenido! ¿Cómo puedo ayudarte hoy?",
+                    scheduleShowing: "📅 Agendar una visita",
+                    askQuestion: "❓ Hacer una pregunta",
+                    customRugInquiry: "🎨 Solicitud de alfombra personalizada"
+                },
+                pt: {
+                    home: "Início",
+                    shop: "Loja",
+                    customRug: "Tapetes Personalizados",
+                    about: "Sobre Nós",
+                    contact: "Contato",
+                    heroTitle: "Tapetes persas de luxo para cada lar",
+                    heroDesc: "Elegância atemporal e artesanato incomparável.",
+                    shopNow: "Comprar Agora",
+                    requestRug: "Solicitar um tapete personalizado",
+                    describeRug: "Descreva seu tapete:",
+                    submitRequest: "Enviar Pedido",
+                    customerReviews: "O que nossos clientes dizem",
+                    chatWelcome: "Bem-vindo! Como posso ajudá-lo hoje?",
+                    scheduleShowing: "📅 Agendar uma visita",
+                    askQuestion: "❓ Fazer uma pergunta",
+                    customRugInquiry: "🎨 Pedido de tapete personalizado"
+                }
+            };
+            document.querySelectorAll("[data-translate]").forEach(el => {
+                el.textContent = translations[lang][el.getAttribute("data-translate")];
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">Royalty Rugs</div>
+        <ul class="nav-links">
+            <li><a href="#home" data-translate="home">Home</a></li>
+            <li><a href="#shop" data-translate="shop">Shop</a></li>
+            <li><a href="#custom-rug" data-translate="customRug">Custom Rugs</a></li>
+            <li><a href="#about" data-translate="about">About</a></li>
+            <li><a href="#contact" data-translate="contact">Contact</a></li>
+        </ul>
+        <select onchange="changeLanguage(this.value)">
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+            <option value="es">Español</option>
+            <option value="pt">Português</option>
+        </select>
+        <div class="cart-icon">🛒</div>
+    </header>
+    
+    <section id="home" class="hero">
+        <h1 data-translate="heroTitle">Luxury Persian Rugs for Every Home</h1>
+        <p data-translate="heroDesc">Timeless elegance & unmatched craftsmanship.</p>
+        <a href="#shop" class="cta-button" data-translate="shopNow">Shop Now</a>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Royalty Rugs. All Rights Reserved.</p>
+    </footer>
+    
+    <div id="chatbot">
+        <button id="chat-toggle" data-translate="chatWelcome">💬 Chat with Us</button>
+        <div id="chat-window" class="hidden">
+            <p data-translate="chatWelcome">Welcome! How can I assist you today?</p>
+            <ul>
+                <li><button onclick="scheduleShowing()" data-translate="scheduleShowing">📅 Schedule a Showing</button></li>
+                <li><button onclick="faqBot()" data-translate="askQuestion">❓ Ask a Question</button></li>
+                <li><button onclick="customRugInquiry()" data-translate="customRugInquiry">🎨 Custom Rug Inquiry</button></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
